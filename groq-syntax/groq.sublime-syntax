@@ -1,0 +1,68 @@
+%YAML 1.2
+---
+# See http://www.sublimetext.com/docs/3/syntax.html
+name: GROQ
+file_extensions: [groq]
+scope: source.groq
+contexts:
+  main:
+    - match: \"|\'
+      scope: punctuation.definition.string.begin
+      push: quotes
+
+    - match: '\{|\[|\('
+      push: brackets
+
+    - match: '\w+(?=->)'
+      push: reference
+
+    - match: '@|\^'
+      scope: meta.class
+    
+    - match: (\=\>)|(\-\>)
+      scope: storage.type
+
+    - match: (\!)|(\&\&)|(\|\|)|<=|>=|<|>|asc|desc
+      scope: keyword
+
+    - match: '(\*)'
+      scope: keyword.control.import
+
+    - match: (order|select|defined|references|coalesce|count|path)(?=\()
+      scope: entity.name.function
+
+    - match: '\btrue\b|\bfalse\b|\bnull\b'
+      scope: constant.language.boolean
+
+    - match: '(\!\=)|(\=\=)|(\.\.\.)'
+      scope: keyword.operator.comparison
+
+  quotes:
+    - meta_scope: string
+    - match: '\\.'
+      scope: constant.character.escape
+    - match: \"|\'
+      scope: punctuation.definition.string.end
+      pop: true
+  
+  # variable:
+    # - match: '\w+(\-\>)'
+      # scope: storage.type
+
+  reference:
+    - match: ''
+      scope: storage.type
+    # - match: '->'
+      pop: true
+    - include: main
+
+  brackets:
+    - match: '_\w+(?=\W)'
+      scope: punctuation.definition.string.begin
+    - match: '[0-9]'
+      scope: constant.numeric
+    - match: '\bmatch\b|\bin\b'
+      scope: keyword
+    - match: '\}|\]|\)'
+      pop: true
+    - include: main
