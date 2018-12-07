@@ -13,11 +13,11 @@ contexts:
     - match: '\{|\[|\('
       push: brackets
 
-    - match: '\w+(?=->)'
-      push: reference
+#     - match: '\w+(?=->)'
+#       push: reference
 
-    - match: '@|\^'
-      scope: meta.class
+#     - match: '@|\^'
+#       scope: meta.class
     
     - match: (\=\>)|(\-\>)
       scope: storage.type
@@ -52,7 +52,7 @@ contexts:
     - include: main
 
   brackets:
-    - match: '_\w+(?=\W)'
+    - match: '_\w+(?=\W)|@|\^'
       scope: punctuation.definition.string.begin
     - match: '(\d\.\d)|(\d)'
       scope: constant.numeric
