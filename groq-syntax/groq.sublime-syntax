@@ -55,7 +55,7 @@ contexts:
   brackets:
     - match: '_\w+(?=\W)'
       scope: punctuation.definition.string.begin
-    - match: '[0-9]'
+    - match: '(\d\.)|(\d)'
       scope: constant.numeric
     - match: '\bmatch\b|\bin\b'
       scope: keyword
