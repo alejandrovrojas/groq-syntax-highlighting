@@ -48,14 +48,13 @@ contexts:
   reference:
     - match: ''
       scope: storage.type
-    # - match: '->'
       pop: true
     - include: main
 
   brackets:
     - match: '_\w+(?=\W)'
       scope: punctuation.definition.string.begin
-    - match: '(\d\.)|(\d)'
+    - match: '(\d\.\d)|(\d)'
       scope: constant.numeric
     - match: '\bmatch\b|\bin\b'
       scope: keyword
