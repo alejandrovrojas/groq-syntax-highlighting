@@ -34,7 +34,7 @@ contexts:
     - match: '\btrue\b|\bfalse\b|\bnull\b'
       scope: constant.language.boolean
 
-    - match: '(\!\=)|(\=\=)|(\.\.\.)'
+    - match: '(\!\=)|(\=\=)'
       scope: keyword.operator.comparison
 
   quotes:
