@@ -26,7 +26,7 @@ contexts:
       scope: keyword
 
     - match: '(\*)'
-      scope: keyword.control.import
+      scope: constant.character
 
     - match: (order|select|defined|references|coalesce|count|path)(?=\()
       scope: entity.name.function
@@ -45,10 +45,6 @@ contexts:
       scope: punctuation.definition.string.end
       pop: true
   
-  # variable:
-    # - match: '\w+(\-\>)'
-      # scope: storage.type
-
   reference:
     - match: ''
       scope: storage.type
