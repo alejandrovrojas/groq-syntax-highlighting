@@ -22,7 +22,7 @@ contexts:
     - match: (\=\>)|(\-\>)
       scope: storage.type
 
-    - match: (\!)|(\&\&)|(\|\|)|<=|>=|<|>|asc|desc
+    - match: (\!(?=\w))|(\&\&)|(\|\|)|<=|>=|<|>|asc|desc
       scope: keyword
 
     - match: '(\*)'
@@ -31,10 +31,10 @@ contexts:
     - match: (order|select|defined|references|coalesce|count|path)(?=\()
       scope: entity.name.function
 
-    - match: '\btrue\b|\bfalse\b|\bnull\b'
+    - match: '\b(true|false|null)\b'
       scope: constant.language.boolean
 
-    - match: '(\!\=)|(\=\=)'
+    - match: '\!\=|\=\=|\=|\<|\>|\!|\&|\+|\-|\*|\/|\%|\|'
       scope: keyword.operator.comparison
 
   quotes:
