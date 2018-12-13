@@ -20,7 +20,7 @@ contexts:
       scope: storage.type.reference.groq
 
     - match: '(\w+)(?=->)|(\w+\[\])(?=->)'
-      scope: storage.type.reference.groq
+      scope: storage.type.reference.name.groq
 
     - match: '\$\w+'
       scope: storage.type.variable.groq
