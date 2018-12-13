@@ -28,7 +28,7 @@ contexts:
     - match: '(\*)(?=\[)'
       scope: constant.character
 
-    - match: (coalesce|count|defined|length|path|references|round|select)(?=\()
+    - match: (coalesce|count|defined|length|path|references|round|select|order)(?=\()
       scope: entity.name.function
 
     - match: '\b(true|false|null)\b'
