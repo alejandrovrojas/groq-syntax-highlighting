@@ -28,7 +28,7 @@ contexts:
     - match: '(\*)(?=\[)'
       scope: constant.character
 
-    - match: (order|select|defined|references|coalesce|count|path)(?=\()
+    - match: (coalesce|count|defined|length|path|references|round|select)(?=\()
       scope: entity.name.function
 
     - match: '\b(true|false|null)\b'
@@ -56,7 +56,7 @@ contexts:
       scope: punctuation.definition.string.begin
     - match: '(\d\.\d)|(\d)'
       scope: constant.numeric
-    - match: '\b(match|bin)\b'
+    - match: '\b(match|in)\b'
       scope: keyword
     - match: '\}|\]|\)'
       pop: true
