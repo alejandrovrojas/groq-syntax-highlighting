@@ -11,7 +11,7 @@ contexts:
       push: quotes
 
     - match: '\{|\[|\('
-      push: braces
+      push: brackets
     
     - match: '=>'
       scope: storage.type.function.groq
@@ -52,7 +52,7 @@ contexts:
       scope: punctuation.definition.string.end
       pop: true
   
-  braces:
+  brackets:
     - meta_scope: punctuation.section.block.groq
     - match: '_\w+'
       scope: meta.property.underscore.groq
