@@ -19,6 +19,9 @@ contexts:
     - match: '->'
       scope: storage.type.reference.groq
 
+    - match: '(\w+)(?=->)|(\w+\[\])(?=->)'
+      scope: storage.type.reference.groq
+
     - match: '\$\w+'
       scope: storage.type.variable.groq
 
