@@ -2,7 +2,7 @@
 ---
 # See http://www.sublimetext.com/docs/3/syntax.html
 name: GROQ
-file_extensions: [groq]
+file_extensions: [ groq ]
 scope: source.groq
 contexts:
   main:
@@ -11,53 +11,51 @@ contexts:
       push: quotes
 
     - match: '\{|\[|\('
-      push: brackets
-
-#     - match: '\w+(?=->)'
-#       push: reference
-
-#     - match: '@|\^'
-#       scope: meta.class
+      push: braces
     
-    - match: (\=\>)|(\-\>)
-      scope: storage.type
+    - match: '=>'
+      scope: storage.type.function.groq
 
-    - match: (\!(?=\w))|(\&\&)|(\|\|)|<=|>=|<|>|asc|desc
-      scope: keyword
+    - match: '->'
+      scope: storage.type.reference.groq
 
-    - match: '(\*)(?=\[)'
-      scope: constant.character
+    - match: '\$\w+'
+      scope: storage.type.variable.groq
 
-    - match: (coalesce|count|defined|length|path|references|round|select|order)(?=\()
-      scope: entity.name.function
+    - match: '(\d\.\d)|(\d)'
+      scope: constant.numeric.groq
+
+    - match: '\*(?=\[)|\^|\@'
+      scope: constant.character.access.groq
 
     - match: '\b(true|false|null)\b'
-      scope: constant.language.boolean
+      scope: constant.language.groq
 
-    - match: '\!\=|\=\=|\=|\<|\>|\!|\&|\+|\-|\*|\/|\%|\|'
-      scope: keyword.operator.comparison
+    - match: '(coalesce|count|defined|length|path|references|round|select|order)(?=\()'
+      scope: entity.name.function.groq
+
+    - match: '\b(match|in|asc|desc)\b'
+      scope: keyword.other.groq
+
+    - match: '\+|-|\*|\*\*|\/|%'
+      scope: keyword.operator.arithmetic.groq
+
+    - match: '!(?=\w)|&&|(\|\|)|<=|>=|<|>|\|'
+      scope: keyword.operator.relational.groq
+
+    - match: '!=|==|='
+      scope: keyword.operator.comparison.groq
 
   quotes:
     - meta_scope: string
-    - match: '\\.'
-      scope: constant.character.escape
     - match: \"|\'
       scope: punctuation.definition.string.end
       pop: true
   
-  reference:
-    - match: ''
-      scope: storage.type
-      pop: true
-    - include: main
-
-  brackets:
-    - match: '_\w+(?=\W)|@|\^'
-      scope: punctuation.definition.string.begin
-    - match: '(\d\.\d)|(\d)'
-      scope: constant.numeric
-    - match: '\b(match|in)\b'
-      scope: keyword
+  braces:
+    - meta_scope: punctuation.section.block.groq
+    - match: '_\w+'
+      scope: meta.property.underscore.groq
     - match: '\}|\]|\)'
       pop: true
     - include: main
