@@ -28,7 +28,7 @@ contexts:
     - match: '(\d\.\d)|(\d)'
       scope: constant.numeric.groq
 
-    - match: '\*(?=\[)|\^|\@'
+    - match: '\*(?=\[|{)|\^|\@'
       scope: constant.character.access.groq
 
     - match: '\b(true|false|null)\b'
