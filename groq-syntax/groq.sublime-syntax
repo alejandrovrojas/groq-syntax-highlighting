@@ -34,7 +34,7 @@ contexts:
     - match: '\b(true|false|null)\b'
       scope: constant.language.groq
 
-    - match: '(coalesce|count|defined|length|path|references|round|select|order)(?=\()'
+    - match: '(coalesce|count|defined|identity|length|now|path|references|round|select|order)(?=\()'
       scope: entity.name.function.groq
 
     - match: '\b(match|in|asc|desc)\b'
