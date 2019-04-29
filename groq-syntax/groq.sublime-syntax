@@ -43,7 +43,7 @@ contexts:
     - match: '\+|-|\*|\*\*|\/|%'
       scope: keyword.operator.arithmetic.groq
 
-    - match: '!(?=\w)|&&|(\|\|)|<=|>=|<|>|\|'
+    - match: '!|&&|(\|\|)|<=|>=|<|>|\|'
       scope: keyword.operator.relational.groq
 
     - match: '!=|==|='
