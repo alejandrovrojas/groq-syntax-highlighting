@@ -43,11 +43,11 @@ contexts:
     - match: '\+|-|\*|\*\*|\/|%'
       scope: keyword.operator.arithmetic.groq
 
-    - match: '!|&&|(\|\|)|<=|>=|<|>|\|'
-      scope: keyword.operator.relational.groq
-
     - match: '!=|==|='
       scope: keyword.operator.comparison.groq
+
+    - match: '!|&&|(\|\|)|<=|>=|<|>|\|'
+      scope: keyword.operator.relational.groq
 
   quotes:
     - meta_scope: string
